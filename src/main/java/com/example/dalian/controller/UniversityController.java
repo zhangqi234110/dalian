@@ -1,6 +1,9 @@
 package com.example.dalian.controller;
 
 import com.example.dalian.common.Common;
+import com.example.dalian.pojo.College;
+import com.example.dalian.service.SchoolService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,17 +16,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/university")
 public class UniversityController {
+
+    @Autowired
+    private SchoolService schoolService;
+
     @RequestMapping("/gaoxiao")
     public Common school(){
-        List school = new ArrayList<>();
-        school.add("大连理工大学");
-        school.add("大连海事大学");
-        school.add("大连外国语大学");
-        school.add("大连大学");
-        school.add("东北财经大学");
-
-        return new Common(200,"完毕",school);
-
-
+        List<College> all = schoolService.findAll();
+        return new Common(200,"完毕",all);
     }
 }
