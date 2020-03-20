@@ -9,13 +9,17 @@ public class College {
     private String name;
     private String image;
     private String content;
+    private Score score;
 
+    public College() {
+    }
 
-    public College(int id, String name, String image, String content) {
+    public College(int id, String name, String image, String content, Score score) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.content = content;
+        this.score = score;
     }
 
     public int getId() {
@@ -50,5 +54,11 @@ public class College {
         this.content = content;
     }
 
+    public Score getScore() {
+        return score;
+    }
 
+    public void setScore(Score score) {
+        this.score = score;
+    }
 }

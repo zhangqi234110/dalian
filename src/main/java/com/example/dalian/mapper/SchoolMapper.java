@@ -9,5 +9,6 @@ import java.util.List;
  */
 public interface SchoolMapper {
     List<College> findAll();
+    College findone(String name);
 
 }

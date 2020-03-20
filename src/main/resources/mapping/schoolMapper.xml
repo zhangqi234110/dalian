@@ -2,11 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.dalian.mapper.SchoolMapper">
-    <select id="findAll" resultType="com.example.dalian.pojo.College">
+    <resultMap id="result" type="com.example.dalian.pojo.College">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="image" property="image"></result>
+        <result column="content" property="content"></result>
+       <!-- <association property="score" javaType="com.example.dalian.pojo.Score">
+            <id property="id" column="id"></id>
+            <result property="name" column="name"></result>
+            <result property="score" column="score"></result>
+        </association>-->
+        <association property="score" column="score_name" select="com.example.dalian.mapper.ScoreMapper.findScore" javaType="com.example.dalian.pojo.Score">
 
-        SELECT * from t_college
+        </association>
+    </resultMap>
+
+    <select id="findone" parameterType="String" resultMap="result">
+        select c.name,c.image,c.content,s.score from t_college c,t_score s where c.name=s.name and c.name=#{name}
 
     </select>
+
+
+<!--    <select id="findAll" resultMap="result">
+
+        SELECT id,name,image,content from t_college
+
+    </select>-->
 
 
 

@@ -22,4 +22,9 @@ public class SchoolServiceImpl implements SchoolService {
         List<College> all = schoolMapper.findAll();
         return all;
     }
+
+    @Override
+    public College findone(String name) {
+        return schoolMapper.findone(name);
+    }
 }
