@@ -22,7 +22,7 @@ public class HotController {
       List<Hot> list = new ArrayList<Hot>();
         Jedis jedis = new Jedis("localhost");
 
-        System.out.println("水水水水");
+        System.out.println("水水水水或火狐吼吼");
             byte[] bytes1 = jedis.get(("热点数据1").getBytes());
             byte[] bytes2 = jedis.get(("热点数据2").getBytes());
             byte[] bytes3 = jedis.get(("热点数据3").getBytes());
