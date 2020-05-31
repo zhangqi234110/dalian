@@ -4,10 +4,8 @@ import com.example.dalian.common.Common;
 import com.example.dalian.pojo.Hot;
 import com.example.dalian.service.HotService;
 import com.example.dalian.tools.Seriaz;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import redis.clients.jedis.Jedis;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +22,7 @@ public class HotController {
       List<Hot> list = new ArrayList<Hot>();
         Jedis jedis = new Jedis("localhost");
 
-
+        System.out.println("水水水水");
             byte[] bytes1 = jedis.get(("热点数据1").getBytes());
             byte[] bytes2 = jedis.get(("热点数据2").getBytes());
             byte[] bytes3 = jedis.get(("热点数据3").getBytes());
