@@ -23,6 +23,7 @@ public class HotController {
         Jedis jedis = new Jedis("localhost");
 
         System.out.println("水水水水或火狐吼吼");
+        System.out.println("woaliel e e ");
             byte[] bytes1 = jedis.get(("热点数据1").getBytes());
             byte[] bytes2 = jedis.get(("热点数据2").getBytes());
             byte[] bytes3 = jedis.get(("热点数据3").getBytes());
